@@ -27,9 +27,10 @@ public class CreateJSONObject implements Serializable{
 			String line;
 			while(inputScanner.hasNextLine()){
 				line = inputScanner.nextLine();
+				System.out.println("line length "+line.length());
 				String name = createJsonName(line.substring(0, 20));
 				String dob = createDateFormat(line.substring(20,  28));
-				String ssn = line.substring(28, 37);
+				String ssn = line.substring(28, line.length()).replace(" ", "");
 				
 				JSONObject json = new JSONObject();
 				
